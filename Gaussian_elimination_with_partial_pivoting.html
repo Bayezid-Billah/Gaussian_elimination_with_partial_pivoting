@@ -1,0 +1,232 @@
+<script>
+    // program to check if a number is prime or not
+
+    // take input from the user
+    const decidervariable = parseInt(prompt("Which variable should we look for with the maximum coefficient "));
+    const e1x = parseInt(prompt("Enter Coefficient of \"x\" from first equation: "));
+    const e1y = parseInt(prompt("Enter Coefficient of \"y\" from first equation: "));
+    const e1z = parseInt(prompt("Enter Coefficient of \"z\" from first equation: "));
+    const numba1 = parseInt(prompt("Enter Coefficient of \"Constant\" from first equation: "));
+
+    const e2x = parseInt(prompt("Enter Coefficient of \"x\" from second equation: "));
+    const e2y = parseInt(prompt("Enter Coefficient of \"y\" from second equation: "));
+    const e2z = parseInt(prompt("Enter Coefficient of \"z\" from second equation: "));
+    const numba2 = parseInt(prompt("Enter Coefficient of \"Constant\" from second equation: "));
+
+    const e3x = parseInt(prompt("Enter Coefficient of \"x\" from third equation: "));
+    const e3y = parseInt(prompt("Enter Coefficient of \"y\" from third equation: "));
+    const e3z = parseInt(prompt("Enter Coefficient of \"z\" from third equation: "));
+    const numba3 = parseInt(prompt("Enter Coefficient of \"Constant\" from third equation: "));
+
+    const e1d = [e1x, e1y, e1z, numba1];
+    const e2d = [e2x, e2y, e2z, numba2];
+    const e3d = [e3x, e3y, e3z, numba3];
+
+    var e1 = new Array(4);
+    var e2 = new Array(4);
+    var e3 = new Array(4);
+
+    if (decidervariable == 'x' || decidervariable == 'X') {
+
+        if (e1x > e2x && e1x > e3x) {
+            e1 = e1d;
+            e2 = e2d;
+            e3 = e3d;
+        }
+
+        else if (e2x > e3x) {
+            e1 = e2d;
+            e2 = e1d;
+            e3 = e3d;
+        }
+
+        else {
+            e1 = e3d;
+            e2 = e1d;
+            e3 = e2d;
+        }
+    }
+
+    else if (decidervariable == 'y' || decidervariable == 'Y') {
+
+        if (e1y > e2y && e1y > e3y) {
+            e1 = e1d;
+            e2 = e2d;
+            e3 = e3d;
+        }
+
+        else if (e2y > e3y) {
+            e1 = e2d;
+            e2 = e1d;
+            e3 = e3d;
+        }
+
+        else {
+            e1 = e3d;
+            e2 = e1d;
+            e3 = e2d;
+        }
+    }
+
+    else{
+
+        if (e1z > e2z && e1z > e3z) {
+            e1 = e1d;
+            e2 = e2d;
+            e3 = e3d;
+        }
+
+        else if (e2z > e3z) {
+            e1 = e2d;
+            e2 = e1d;
+            e3 = e3d;
+        }
+
+        else {
+            e1 = e3d;
+            e2 = e1d;
+            e3 = e2d;
+        }
+    }
+
+
+    document.write(`${e1x} is a not prime number `);
+    document.write("<br>");
+
+    document.write("E1 =  ");
+    for (let i = 0; i < 4; i++) {
+        document.write(e1[i] + "-----");
+    }
+    document.write("<br>");
+
+    document.write("E2 =  ");
+    for (let i = 0; i < 4; i++) {
+        document.write(e2[i] + "-----");
+    }
+    document.write("<br>");
+
+    document.write("E3 =  ");
+    for (let i = 0; i < 4; i++) {
+        document.write(e3[i] + "-----");
+    }
+    document.write("<br>");
+
+    //e4 begins
+    var e4 = new Array(4);
+    for (let i = 0; i < 4; i++) {
+        var num = (e1[i] / e1[0]);
+        Math.round(num * 10000) / 10000;
+        e4[i] = Math.round(num * 10000) / 10000;
+    }
+
+    document.write("E4 =  ");
+    for (let i = 0; i < 4; i++) {
+        document.write(e4[i] + "-----");
+    }
+    document.write("<br>");
+
+    //e5 begins 
+    var e5 = new Array(4);
+    for (let i = 0; i < 4; i++) {
+        var num = (e2[i] / e2[0]);
+        e5[i] = Math.round(num * 10000) / 10000;
+    }
+
+    document.write("E5 =  ");
+    for (let i = 0; i < 4; i++) {
+        document.write(e5[i] + "-----");
+    }
+    document.write("<br>");
+
+    //e6 begins
+    var e6 = new Array(4);
+    for (let i = 0; i < 4; i++) {
+        var num = (e3[i] / e3[0]);
+        e6[i] = Math.round(num * 10000) / 10000;
+    }
+
+    document.write("E6 =  ");
+    for (let i = 0; i < 4; i++) {
+        document.write(e6[i] + "-----");
+    }
+    document.write("<br>");
+
+    //e7 begins
+    var e7 = new Array(4);
+    for (let i = 0; i < 4; i++) {
+        var num = (e5[i] - e4[i]);
+        e7[i] = Math.round(num * 10000) / 10000;
+    }
+
+    document.write("E7 =  ");
+    for (let i = 0; i < 4; i++) {
+        document.write(e7[i] + "-----");
+    }
+    document.write("<br>");
+
+    //e8 begins
+    var e8 = new Array(4);
+    for (let i = 0; i < 4; i++) {
+        var num = (e6[i] - e4[i]);
+        e8[i] = Math.round(num * 10000) / 10000;
+    }
+
+    document.write("E8 =  ");
+    for (let i = 0; i < 4; i++) {
+        document.write(e8[i] + "-----");
+    }
+    document.write("<br>");
+
+    //e9 begins
+    var e9 = new Array(4);
+    for (let i = 0; i < 4; i++) {
+        var num = (e7[i] / e7[1]);
+        e9[i] = Math.round(num * 10000) / 10000;
+    }
+
+    document.write("E9 =  ");
+    for (let i = 0; i < 4; i++) {
+        document.write(e9[i] + "-----");
+    }
+    document.write("<br>");
+
+    //e10 begins
+    var e10 = new Array(4);
+    for (let i = 0; i < 4; i++) {
+        var num = (e8[i] / e8[1]);
+        e10[i] = Math.round(num * 10000) / 10000;
+    }
+
+    document.write("E10 =  ");
+    for (let i = 0; i < 4; i++) {
+        document.write(e10[i] + "-----");
+    }
+    document.write("<br>");
+
+    //e11 begins
+    var e11 = new Array(4);
+    for (let i = 0; i < 4; i++) {
+        var num = e9[i] - e10[i];
+        e11[i] = Math.round(num * 10000) / 10000;
+    }
+    document.write("Next= ");
+    for (let i = 0; i < 4; i++) {
+        document.write(e11[i] + "-----");
+    }
+    document.write("<br>");
+
+    //e12 begins
+    var e12 = new Array(4);
+    for (let i = 0; i < 4; i++) {
+        var num = e10[i] / e10[2];
+        e12[i] = Math.round(num * 10000) / 10000;
+    }
+    document.write("Next= ");
+    for (let i = 0; i < 4; i++) {
+        document.write(e12[i] + "-----");
+    }
+    document.write("<br>");
+
+
+
+</script>
