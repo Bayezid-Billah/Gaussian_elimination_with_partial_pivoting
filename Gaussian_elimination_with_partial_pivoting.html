@@ -2,7 +2,7 @@
     // program to check if a number is prime or not
 
     // take input from the user
-    var decidervariable = window.prompt("Which variable should we look for with the maximum coefficient ");
+    var pivot = window.prompt("Which variable should we look for with the maximum coefficient ");
     var power = window.prompt("To how many decimal point you want the values to print  ");
     var decimalpoint = Math.pow(10, power);
     const e1x = parseInt(prompt("Enter Coefficient of \"x\" from first equation: "));
@@ -29,8 +29,9 @@
     var e3 = new Array(4);
     var eqn = 1;
     var d,e,f;
+    s=['X','Y','Z'];
 
-    if (decidervariable.toUpperCase() === "X") {
+    if (pivot.toUpperCase() === "X") {
 
         d=0;e=1;f=2; //to make solution pivot based on x;
         if (e1x > e2x && e1x > e3x) {
@@ -52,7 +53,7 @@
         }
     }
 
-    else if (decidervariable.toUpperCase() === "Y") {
+    else if (pivot.toUpperCase() === "Y") {
 
         d=1;e=0;f=2; //to make solution pivot based on y;
         if (e1y > e2y && e1y > e3y) {
@@ -102,6 +103,7 @@
     for (let i = 0; i < 4; i++) {
         document.write("("+e1[i]+")" + "_____");
     }
+    document.write("(Pivot "+s[d]+")");
     document.write("<br>");
 
     document.write("E"+eqn+" =  ");eqn++;
@@ -128,6 +130,7 @@
     for (let i = 0; i < 4; i++) {
         document.write("("+e4[i]+")" + "_____");
     }
+    document.write("(Pivot "+s[d]+")");
     document.write("<br>");
 
     //e5 begins 
@@ -168,6 +171,7 @@
     for (let i = 0; i < 4; i++) {
         document.write("("+e7[i]+")" + "_____");
     }
+    document.write("(Pivot "+s[e]+")");
     document.write("<br>");
 
     //e8 begins
@@ -220,6 +224,7 @@
     for (let i = 0; i < 4; i++) {
         document.write("("+e9[i]+")" + "_____");
     }
+    document.write("(Pivot "+s[e]+")");
     document.write("<br>");
 
     //e12 begins
@@ -245,6 +250,7 @@
     for (let i = 0; i < 4; i++) {
         document.write("("+e11[i]+")" + "_____");
     }
+    document.write("(Pivot "+s[f]+")");
     document.write("<br>");
 
     //e14 begins
@@ -257,7 +263,42 @@
     for (let i = 0; i < 4; i++) {
         document.write("("+e12[i]+")" + "_____");
     }
+    document.write("(Pivot "+s[f]+")");
     document.write("<br>");
+    document.write("<br>");
+
+    document.write("The triangular form of the system can be summarized as "+"<br>");
+    document.write("<br>");
+    document.write(s[d]+"+"+e4[e]+s[e]+"+"+e4[f]+s[f]+" = "+e4[3]+"<br>" );
+    document.write(s[e]+"+"+e9[f]+s[f]+" = "+e9[3]+"<br>");
+    document.write(s[f]+" = "+e12[3]);
+    document.write("<br>");
+    document.write("<br>");
+
+    var a = Math.round(e12[3] * decimalpoint) / decimalpoint ;
+    var b = Math.round((e9[3]-(e9[f]*e12[3])) * decimalpoint) / decimalpoint ;
+    var c = Math.round((e4[3]-e4[e]*b-e4[f]*e12[3]) * decimalpoint) / decimalpoint;
+
+    document.write(" Solving by back substitution, we have, "+s[f]+" = "+a);    
+    document.write("<br>"+s[e]+" = "+" = "+e9[3]+"-"+e9[f]+"("+e12[3]+")"+" = "+b);             
+    document.write("<br>"+s[d]+" = "+e4[3]+" - "+e4[e]+"("+b+")"+" - "+e4[f]+"("+e12[3]+")"+" = "+c);
+
+    document.write("<br>");
+    document.write("<br>");
+
+    //z=a;y=b x=c
+    var d;
+
+    if (pivot.toUpperCase() === "Y"){
+        d=b;b=c;c=d;
+    }
+    else if(pivot.toUpperCase() === "Z"){
+        d=c;c=b;b=a;a=d;
+    }
+    else{a=a;}
+        document.write("Justification : "+e1d[0]+" ("+c+") + "+e1d[1]+" ("+b+") + "+ e1d[2]+" ("+a+") = "+ (e1d[0]*c+e1d[1]*b+e1d[2]*a)+ " ≅ "+numba1);
+        document.write("<br>"+"Justification : "+e2d[0]+" ("+c+") + "+e2d[1]+" ("+b+") + "+ e2d[2]+" ("+a+") = "+ (e2d[0]*c+e2d[1]*b+e2d[2]*a)+ " ≅ "+numba2);
+        document.write("<br>"+"Justification : "+e3d[0]+" ("+c+") + "+e3d[1]+" ("+b+") + "+ e3d[2]+" ("+a+") = "+ (e3d[0]*c+e3d[1]*b+e3d[2]*a)+ " ≅ "+numba3);
 
 
 
