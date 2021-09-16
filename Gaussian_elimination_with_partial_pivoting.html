@@ -2,7 +2,9 @@
     // program to check if a number is prime or not
 
     // take input from the user
-    const decidervariable = parseInt(prompt("Which variable should we look for with the maximum coefficient "));
+    var decidervariable = window.prompt("Which variable should we look for with the maximum coefficient ");
+    var power = window.prompt("To how many decimal point you want the values to print  ");
+    var decimalpoint = Math.pow(10, power);
     const e1x = parseInt(prompt("Enter Coefficient of \"x\" from first equation: "));
     const e1y = parseInt(prompt("Enter Coefficient of \"y\" from first equation: "));
     const e1z = parseInt(prompt("Enter Coefficient of \"z\" from first equation: "));
@@ -25,9 +27,12 @@
     var e1 = new Array(4);
     var e2 = new Array(4);
     var e3 = new Array(4);
+    var eqn = 1;
+    var d,e,f;
 
-    if (decidervariable == 'x' || decidervariable == 'X') {
+    if (decidervariable.toUpperCase() === "X") {
 
+        d=0;e=1;f=2; //to make solution pivot based on x;
         if (e1x > e2x && e1x > e3x) {
             e1 = e1d;
             e2 = e2d;
@@ -47,8 +52,9 @@
         }
     }
 
-    else if (decidervariable == 'y' || decidervariable == 'Y') {
+    else if (decidervariable.toUpperCase() === "Y") {
 
+        d=1;e=0;f=2; //to make solution pivot based on y;
         if (e1y > e2y && e1y > e3y) {
             e1 = e1d;
             e2 = e2d;
@@ -69,7 +75,7 @@
     }
 
     else{
-
+        d=2;e=0;f=1; //to make solution pivot based on z;
         if (e1z > e2z && e1z > e3z) {
             e1 = e1d;
             e2 = e2d;
@@ -90,140 +96,166 @@
     }
 
 
-    document.write(`${e1x} is a not prime number `);
     document.write("<br>");
 
-    document.write("E1 =  ");
+    document.write("E"+eqn+" =  ");eqn++;
     for (let i = 0; i < 4; i++) {
-        document.write(e1[i] + "-----");
+        document.write("("+e1[i]+")" + "_____");
     }
     document.write("<br>");
 
-    document.write("E2 =  ");
+    document.write("E"+eqn+" =  ");eqn++;
     for (let i = 0; i < 4; i++) {
-        document.write(e2[i] + "-----");
+        document.write("("+e2[i]+")" + "_____");
     }
     document.write("<br>");
 
-    document.write("E3 =  ");
+    document.write("E"+eqn+" =  ");eqn++;
     for (let i = 0; i < 4; i++) {
-        document.write(e3[i] + "-----");
+        document.write("("+e3[i]+")" + "_____");
     }
     document.write("<br>");
 
-    //e4 begins
+    //e4 begins  (Pivoting equation)
     var e4 = new Array(4);
     for (let i = 0; i < 4; i++) {
-        var num = (e1[i] / e1[0]);
-        Math.round(num * 10000) / 10000;
-        e4[i] = Math.round(num * 10000) / 10000;
+        var num = (e1[i] / e1[d]);
+        Math.round(num * decimalpoint) / decimalpoint;
+        e4[i] = Math.round(num * decimalpoint) / decimalpoint;
     }
 
-    document.write("E4 =  ");
+    document.write("E"+eqn+" =  ");eqn++;
     for (let i = 0; i < 4; i++) {
-        document.write(e4[i] + "-----");
+        document.write("("+e4[i]+")" + "_____");
     }
     document.write("<br>");
 
     //e5 begins 
     var e5 = new Array(4);
     for (let i = 0; i < 4; i++) {
-        var num = (e2[i] / e2[0]);
-        e5[i] = Math.round(num * 10000) / 10000;
+        var num = (e2[i] / e2[d]);
+        e5[i] = Math.round(num * decimalpoint) / decimalpoint;
     }
 
-    document.write("E5 =  ");
+    document.write("E"+eqn+" =  ");eqn++;
     for (let i = 0; i < 4; i++) {
-        document.write(e5[i] + "-----");
+        document.write("("+e5[i]+")" + "_____");
     }
     document.write("<br>");
 
     //e6 begins
     var e6 = new Array(4);
     for (let i = 0; i < 4; i++) {
-        var num = (e3[i] / e3[0]);
-        e6[i] = Math.round(num * 10000) / 10000;
+        var num = (e3[i] / e3[d]);
+        e6[i] = Math.round(num * decimalpoint) / decimalpoint;
     }
 
-    document.write("E6 =  ");
+    document.write("E"+eqn+" =  ");eqn++;
     for (let i = 0; i < 4; i++) {
-        document.write(e6[i] + "-----");
+        document.write("("+e6[i]+")" + "_____");
     }
     document.write("<br>");
+
 
     //e7 begins
     var e7 = new Array(4);
     for (let i = 0; i < 4; i++) {
-        var num = (e5[i] - e4[i]);
-        e7[i] = Math.round(num * 10000) / 10000;
+        var num = (e4[i] - e5[i]);
+        e7[i] = Math.round(num * decimalpoint) / decimalpoint;
     }
 
-    document.write("E7 =  ");
+    document.write("E"+eqn+" =  ");eqn++;
     for (let i = 0; i < 4; i++) {
-        document.write(e7[i] + "-----");
+        document.write("("+e7[i]+")" + "_____");
     }
     document.write("<br>");
 
     //e8 begins
     var e8 = new Array(4);
     for (let i = 0; i < 4; i++) {
-        var num = (e6[i] - e4[i]);
-        e8[i] = Math.round(num * 10000) / 10000;
+        var num = (e4[i] - e6[i]);
+        e8[i] = Math.round(num * decimalpoint) / decimalpoint;
     }
 
-    document.write("E8 =  ");
+    document.write("E"+eqn+" =  ");eqn++;
     for (let i = 0; i < 4; i++) {
-        document.write(e8[i] + "-----");
+        document.write("("+e8[i]+")" + "_____");
     }
     document.write("<br>");
 
-    //e9 begins
-    var e9 = new Array(4);
-    for (let i = 0; i < 4; i++) {
-        var num = (e7[i] / e7[1]);
-        e9[i] = Math.round(num * 10000) / 10000;
+    //e9 if e7 is negative   (pivoting equation)
+    if(e7[1]<0){
+        for(let i =0;i<4;i++){
+            e7[i] = e7[i]*(-1);
+        }
+
+        document.write("E"+eqn+" =  ");eqn++;
+        for (let i = 0; i < 4; i++) {
+            document.write("("+e7[i]+")" + "_____");
+        }
+        document.write("<br>");
     }
 
-    document.write("E9 =  ");
-    for (let i = 0; i < 4; i++) {
-        document.write(e9[i] + "-----");
-    }
-    document.write("<br>");
+    //e10 if e8 is negative
+    if(e8[1]<0){
+        for(let i =0;i<4;i++){
+            e8[i] = e8[i]*(-1);
+        }
 
-    //e10 begins
-    var e10 = new Array(4);
-    for (let i = 0; i < 4; i++) {
-        var num = (e8[i] / e8[1]);
-        e10[i] = Math.round(num * 10000) / 10000;
+        document.write("E"+eqn+" =  ");eqn++;
+        for (let i = 0; i < 4; i++) {
+            document.write("("+e8[i]+")" + "_____");
+        }
+        document.write("<br>");
     }
-
-    document.write("E10 =  ");
-    for (let i = 0; i < 4; i++) {
-        document.write(e10[i] + "-----");
-    }
-    document.write("<br>");
 
     //e11 begins
-    var e11 = new Array(4);
+    var e9 = new Array(4);
     for (let i = 0; i < 4; i++) {
-        var num = e9[i] - e10[i];
-        e11[i] = Math.round(num * 10000) / 10000;
+        var num = (e7[i] / e7[(e)]);
+        e9[i] = Math.round(num * decimalpoint) / decimalpoint;
     }
-    document.write("Next= ");
+
+    document.write("E"+eqn+" =  ");eqn++;
     for (let i = 0; i < 4; i++) {
-        document.write(e11[i] + "-----");
+        document.write("("+e9[i]+")" + "_____");
     }
     document.write("<br>");
 
     //e12 begins
+    var e10 = new Array(4);
+    for (let i = 0; i < 4; i++) {
+        var num = (e8[i] / e8[(e)]);
+        e10[i] = Math.round(num * decimalpoint) / decimalpoint;
+    }
+
+    document.write("E"+eqn+" =  ");eqn++;
+    for (let i = 0; i < 4; i++) {
+        document.write("("+e10[i]+")" + "_____");
+    }
+    document.write("<br>");
+
+    //e13 begins
+    var e11 = new Array(4);
+    for (let i = 0; i < 4; i++) {
+        var num = e9[i] - e10[i];
+        e11[i] = Math.round(num * decimalpoint) / decimalpoint;
+    }
+    document.write("E"+eqn+" =  ");eqn++;
+    for (let i = 0; i < 4; i++) {
+        document.write("("+e11[i]+")" + "_____");
+    }
+    document.write("<br>");
+
+    //e14 begins
     var e12 = new Array(4);
     for (let i = 0; i < 4; i++) {
-        var num = e10[i] / e10[2];
-        e12[i] = Math.round(num * 10000) / 10000;
+        var num = e11[i] / e11[f];
+        e12[i] = Math.round(num * decimalpoint) / decimalpoint;
     }
-    document.write("Next= ");
+    document.write("E"+eqn+" =  ");eqn++;
     for (let i = 0; i < 4; i++) {
-        document.write(e12[i] + "-----");
+        document.write("("+e12[i]+")" + "_____");
     }
     document.write("<br>");
 
