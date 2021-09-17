@@ -28,12 +28,12 @@
     var e2 = new Array(4);
     var e3 = new Array(4);
     var eqn = 1;
-    var d,e,f;
-    s=['X','Y','Z'];
+    var d, e, f;
+    s = ['X', 'Y', 'Z'];
 
     if (pivot.toUpperCase() === "X") {
 
-        d=0;e=1;f=2; //to make solution pivot based on x;
+        d = 0; e = 1; f = 2; //to make solution pivot based on x;
         if (e1x > e2x && e1x > e3x) {
             e1 = e1d;
             e2 = e2d;
@@ -55,7 +55,7 @@
 
     else if (pivot.toUpperCase() === "Y") {
 
-        d=1;e=0;f=2; //to make solution pivot based on y;
+        d = 1; e = 0; f = 2; //to make solution pivot based on y;
         if (e1y > e2y && e1y > e3y) {
             e1 = e1d;
             e2 = e2d;
@@ -75,8 +75,8 @@
         }
     }
 
-    else{
-        d=2;e=0;f=1; //to make solution pivot based on z;
+    else {
+        d = 2; e = 0; f = 1; //to make solution pivot based on z;
         if (e1z > e2z && e1z > e3z) {
             e1 = e1d;
             e2 = e2d;
@@ -99,22 +99,22 @@
 
     document.write("<br>");
 
-    document.write("E"+eqn+" =  ");eqn++;
+    document.write("E" + eqn + " =  "); eqn++;
     for (let i = 0; i < 4; i++) {
-        document.write("("+e1[i]+")" + "_____");
+        document.write("(" + e1[i] + ")" + "_____");
     }
-    document.write("(Pivot "+s[d]+")");
+    document.write("(Pivot " + s[d] + ")");
     document.write("<br>");
 
-    document.write("E"+eqn+" =  ");eqn++;
+    document.write("E" + eqn + " =  "); eqn++;
     for (let i = 0; i < 4; i++) {
-        document.write("("+e2[i]+")" + "_____");
+        document.write("(" + e2[i] + ")" + "_____");
     }
     document.write("<br>");
 
-    document.write("E"+eqn+" =  ");eqn++;
+    document.write("E" + eqn + " =  "); eqn++;
     for (let i = 0; i < 4; i++) {
-        document.write("("+e3[i]+")" + "_____");
+        document.write("(" + e3[i] + ")" + "_____");
     }
     document.write("<br>");
 
@@ -126,11 +126,11 @@
         e4[i] = Math.round(num * decimalpoint) / decimalpoint;
     }
 
-    document.write("E"+eqn+" =  ");eqn++;
+    document.write("E" + eqn + " =  "); eqn++;
     for (let i = 0; i < 4; i++) {
-        document.write("("+e4[i]+")" + "_____");
+        document.write("(" + e4[i] + ")" + "_____");
     }
-    document.write("(Pivot "+s[d]+")");
+    document.write("(Pivot " + s[d] + ")");
     document.write("<br>");
 
     //e5 begins 
@@ -140,9 +140,9 @@
         e5[i] = Math.round(num * decimalpoint) / decimalpoint;
     }
 
-    document.write("E"+eqn+" =  ");eqn++;
+    document.write("E" + eqn + " =  "); eqn++;
     for (let i = 0; i < 4; i++) {
-        document.write("("+e5[i]+")" + "_____");
+        document.write("(" + e5[i] + ")" + "_____");
     }
     document.write("<br>");
 
@@ -153,9 +153,9 @@
         e6[i] = Math.round(num * decimalpoint) / decimalpoint;
     }
 
-    document.write("E"+eqn+" =  ");eqn++;
+    document.write("E" + eqn + " =  "); eqn++;
     for (let i = 0; i < 4; i++) {
-        document.write("("+e6[i]+")" + "_____");
+        document.write("(" + e6[i] + ")" + "_____");
     }
     document.write("<br>");
 
@@ -167,11 +167,11 @@
         e7[i] = Math.round(num * decimalpoint) / decimalpoint;
     }
 
-    document.write("E"+eqn+" =  ");eqn++;
+    document.write("E" + eqn + " =  "); eqn++;
     for (let i = 0; i < 4; i++) {
-        document.write("("+e7[i]+")" + "_____");
+        document.write("(" + e7[i] + ")" + "_____");
     }
-    document.write("(Pivot "+s[e]+")");
+    document.write("(Pivot " + s[e] + ")");
     document.write("<br>");
 
     //e8 begins
@@ -181,34 +181,34 @@
         e8[i] = Math.round(num * decimalpoint) / decimalpoint;
     }
 
-    document.write("E"+eqn+" =  ");eqn++;
+    document.write("E" + eqn + " =  "); eqn++;
     for (let i = 0; i < 4; i++) {
-        document.write("("+e8[i]+")" + "_____");
+        document.write("(" + e8[i] + ")" + "_____");
     }
     document.write("<br>");
 
     //e9 if e7 is negative   (pivoting equation)
-    if(e7[1]<0){
-        for(let i =0;i<4;i++){
-            e7[i] = e7[i]*(-1);
+    if (e7[1] < 0) {
+        for (let i = 0; i < 4; i++) {
+            e7[i] = e7[i] * (-1);
         }
 
-        document.write("E"+eqn+" =  ");eqn++;
+        document.write("E" + eqn + " =  "); eqn++;
         for (let i = 0; i < 4; i++) {
-            document.write("("+e7[i]+")" + "_____");
+            document.write("(" + e7[i] + ")" + "_____");
         }
         document.write("<br>");
     }
 
     //e10 if e8 is negative
-    if(e8[1]<0){
-        for(let i =0;i<4;i++){
-            e8[i] = e8[i]*(-1);
+    if (e8[1] < 0) {
+        for (let i = 0; i < 4; i++) {
+            e8[i] = e8[i] * (-1);
         }
 
-        document.write("E"+eqn+" =  ");eqn++;
+        document.write("E" + eqn + " =  "); eqn++;
         for (let i = 0; i < 4; i++) {
-            document.write("("+e8[i]+")" + "_____");
+            document.write("(" + e8[i] + ")" + "_____");
         }
         document.write("<br>");
     }
@@ -220,11 +220,11 @@
         e9[i] = Math.round(num * decimalpoint) / decimalpoint;
     }
 
-    document.write("E"+eqn+" =  ");eqn++;
+    document.write("E" + eqn + " =  "); eqn++;
     for (let i = 0; i < 4; i++) {
-        document.write("("+e9[i]+")" + "_____");
+        document.write("(" + e9[i] + ")" + "_____");
     }
-    document.write("(Pivot "+s[e]+")");
+    document.write("(Pivot " + s[e] + ")");
     document.write("<br>");
 
     //e12 begins
@@ -234,9 +234,9 @@
         e10[i] = Math.round(num * decimalpoint) / decimalpoint;
     }
 
-    document.write("E"+eqn+" =  ");eqn++;
+    document.write("E" + eqn + " =  "); eqn++;
     for (let i = 0; i < 4; i++) {
-        document.write("("+e10[i]+")" + "_____");
+        document.write("(" + e10[i] + ")" + "_____");
     }
     document.write("<br>");
 
@@ -246,11 +246,11 @@
         var num = e9[i] - e10[i];
         e11[i] = Math.round(num * decimalpoint) / decimalpoint;
     }
-    document.write("E"+eqn+" =  ");eqn++;
+    document.write("E" + eqn + " =  "); eqn++;
     for (let i = 0; i < 4; i++) {
-        document.write("("+e11[i]+")" + "_____");
+        document.write("(" + e11[i] + ")" + "_____");
     }
-    document.write("(Pivot "+s[f]+")");
+    document.write("(Pivot " + s[f] + ")");
     document.write("<br>");
 
     //e14 begins
@@ -259,29 +259,29 @@
         var num = e11[i] / e11[f];
         e12[i] = Math.round(num * decimalpoint) / decimalpoint;
     }
-    document.write("E"+eqn+" =  ");eqn++;
+    document.write("E" + eqn + " =  "); eqn++;
     for (let i = 0; i < 4; i++) {
-        document.write("("+e12[i]+")" + "_____");
+        document.write("(" + e12[i] + ")" + "_____");
     }
-    document.write("(Pivot "+s[f]+")");
+    document.write("(Pivot " + s[f] + ")");
     document.write("<br>");
     document.write("<br>");
 
-    document.write("The triangular form of the system can be summarized as "+"<br>");
+    document.write("The triangular form of the system can be summarized as " + "<br>");
     document.write("<br>");
-    document.write(s[d]+"+"+e4[e]+s[e]+"+"+e4[f]+s[f]+" = "+e4[3]+"<br>" );
-    document.write(s[e]+"+"+e9[f]+s[f]+" = "+e9[3]+"<br>");
-    document.write(s[f]+" = "+e12[3]);
+    document.write(s[d] + "+" + e4[e] + s[e] + "+" + e4[f] + s[f] + " = " + e4[3] + "<br>");
+    document.write(s[e] + "+" + e9[f] + s[f] + " = " + e9[3] + "<br>");
+    document.write(s[f] + " = " + e12[3]);
     document.write("<br>");
     document.write("<br>");
 
-    var a = Math.round(e12[3] * decimalpoint) / decimalpoint ;
-    var b = Math.round((e9[3]-(e9[f]*e12[3])) * decimalpoint) / decimalpoint ;
-    var c = Math.round((e4[3]-e4[e]*b-e4[f]*e12[3]) * decimalpoint) / decimalpoint;
+    var a = Math.round(e12[3] * decimalpoint) / decimalpoint;
+    var b = Math.round((e9[3] - (e9[f] * e12[3])) * decimalpoint) / decimalpoint;
+    var c = Math.round((e4[3] - e4[e] * b - e4[f] * e12[3]) * decimalpoint) / decimalpoint;
 
-    document.write(" Solving by back substitution, we have, "+s[f]+" = "+a);    
-    document.write("<br>"+s[e]+" = "+" = "+e9[3]+"-"+e9[f]+"("+e12[3]+")"+" = "+b);             
-    document.write("<br>"+s[d]+" = "+e4[3]+" - "+e4[e]+"("+b+")"+" - "+e4[f]+"("+e12[3]+")"+" = "+c);
+    document.write(" Solving by back substitution, we have, " + s[f] + " = " + a);
+    document.write("<br>" + s[e] + " = " + " = " + e9[3] + "-" + e9[f] + "(" + e12[3] + ")" + " = " + b);
+    document.write("<br>" + s[d] + " = " + e4[3] + " - " + e4[e] + "(" + b + ")" + " - " + e4[f] + "(" + e12[3] + ")" + " = " + c);
 
     document.write("<br>");
     document.write("<br>");
@@ -289,16 +289,16 @@
     //z=a;y=b x=c
     var d;
 
-    if (pivot.toUpperCase() === "Y"){
-        d=b;b=c;c=d;
+    if (pivot.toUpperCase() === "Y") {
+        d = b; b = c; c = d;
     }
-    else if(pivot.toUpperCase() === "Z"){
-        d=c;c=b;b=a;a=d;
+    else if (pivot.toUpperCase() === "Z") {
+        d = c; c = b; b = a; a = d;
     }
-    else{a=a;}
-        document.write("Justification : "+e1d[0]+" ("+c+") + "+e1d[1]+" ("+b+") + "+ e1d[2]+" ("+a+") = "+ (e1d[0]*c+e1d[1]*b+e1d[2]*a)+ " ≅ "+numba1);
-        document.write("<br>"+"Justification : "+e2d[0]+" ("+c+") + "+e2d[1]+" ("+b+") + "+ e2d[2]+" ("+a+") = "+ (e2d[0]*c+e2d[1]*b+e2d[2]*a)+ " ≅ "+numba2);
-        document.write("<br>"+"Justification : "+e3d[0]+" ("+c+") + "+e3d[1]+" ("+b+") + "+ e3d[2]+" ("+a+") = "+ (e3d[0]*c+e3d[1]*b+e3d[2]*a)+ " ≅ "+numba3);
+    else { a = a; }
+    document.write("Justification : " + e1d[0] + " (" + c + ") + " + e1d[1] + " (" + b + ") + " + e1d[2] + " (" + a + ") = " + (e1d[0] * c + e1d[1] * b + e1d[2] * a) + " ≅ " + numba1);
+    document.write("<br>" + "Justification : " + e2d[0] + " (" + c + ") + " + e2d[1] + " (" + b + ") + " + e2d[2] + " (" + a + ") = " + (e2d[0] * c + e2d[1] * b + e2d[2] * a) + " ≅ " + numba2);
+    document.write("<br>" + "Justification : " + e3d[0] + " (" + c + ") + " + e3d[1] + " (" + b + ") + " + e3d[2] + " (" + a + ") = " + (e3d[0] * c + e3d[1] * b + e3d[2] * a) + " ≅ " + numba3);
 
 
 
